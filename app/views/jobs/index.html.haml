@@ -1,0 +1,5 @@
+- @jobs.each_with_index do |job, index|
+  =index+1
+  =job.title
+%br
+=link_to 'New job', new_job_path, class: 'btn btn-outline-primary'
