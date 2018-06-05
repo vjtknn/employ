@@ -32,6 +32,7 @@ group :development do
   gem 'better_errors'
   gem 'bullet'
   gem 'rubocop'
+  gem 'annotate'
 end
 
 group :test do
