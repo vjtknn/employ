@@ -24,11 +24,9 @@
 
 class Employee < ApplicationRecord
   belongs_to :job
-  belongs_to :boss, class_name: 'Employee'
-  belongs_to :department
+  belongs_to :boss, class_name: 'Employee', optional: true
+  belongs_to :department, optional: true
 
-  validates :job, presence: false
+  validates_presence_of :first_name, :last_name, :birth_date, :job
   validates :boss, presence: false
-  validates :department, presence: false
-
 end

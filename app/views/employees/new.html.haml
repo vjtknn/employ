@@ -1,5 +1,7 @@
-= simple_form_for @employee_form,  url: employees_path, method: :post do |f|
+= simple_form_for @employee,  url: employees_path, method: :post do |f|
   = f.input :first_name
   = f.input :last_name
-  = f.input :birth_date, as: :date, start_year: Date.today.year - 12, end_year: Date.today.year - 100, discard_day: true, order: [:month, :year]
+  = f.input :birth_date, as: :date, start_year: Date.today.year - 12, end_year: Date.today.year - 100, order: [:day, :month, :year]
+  = f.input :job_id, collection: @jobs
+  = f.input :boss_id, collection: @employees
   = f.button :submit
