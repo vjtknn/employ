@@ -3,6 +3,10 @@ class EmployeeForm
 
   attr_accessor :first_name, :last_name, :birth_date, :job_id, :boss_id
 
+  validates_presence_of :first_name, :last_name, :birth_date
+
+  validates :job_id, 
+
   def create
     binding.pry
     if valid?
