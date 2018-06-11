@@ -14,12 +14,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -30,11 +32,11 @@ group :development do
   gem 'better_errors'
   gem 'bullet'
   gem 'rubocop'
+  gem 'annotate'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'

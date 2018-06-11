@@ -1,0 +1,8 @@
+%nav.navbar.navbar-dark.bg-dark
+  = link_to 'Employees App', root_path, class: 'navbar-brand'
+  .float-right
+    - unless current_user
+      = link_to 'Register', new_user_registration_path, class: 'btn btn-primary'
+      = link_to 'Log in', new_user_session_path, class: 'btn btn-success'
+    - else
+      = link_to 'Log out', destroy_user_session_path, class: 'btn btn-danger'

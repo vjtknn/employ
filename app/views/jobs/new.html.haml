@@ -1,0 +1,5 @@
+%h1 Crete new job:
+
+= simple_form_for @job_form, url: jobs_path, method: :post do |f|
+  =f.input :title
+  =f.button :submit, "Create new job"
