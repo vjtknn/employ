@@ -2,4 +2,5 @@
   =index+1
   =job.title
 %br
-=link_to 'New job', new_job_path, class: 'btn btn-outline-primary'
+- if policy(JobForm).new?
+  =link_to 'New job', new_job_path, class: 'btn btn-outline-primary'

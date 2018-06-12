@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'pry'
