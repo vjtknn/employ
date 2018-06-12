@@ -1,6 +1,10 @@
 class JobFormPolicy < ApplicationPolicy
 
   def new?
-    current_user.role == 'admin'
+    admin?
+  end
+
+  def create?
+    !admin?
   end
 end
