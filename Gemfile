@@ -16,6 +16,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'pundit'
+gem 'grape'
 
 group :development, :test do
   gem 'pry'
