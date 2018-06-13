@@ -1,10 +1,18 @@
 class JobFormPolicy < ApplicationPolicy
 
   def new?
-    admin?
+    true
   end
 
   def create?
-    !admin?
+    admin?
+  end
+
+  def edit?
+    true
+  end
+
+  def update?
+    admin?
   end
 end

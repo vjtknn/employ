@@ -25,6 +25,4 @@ class JobsController < ApplicationController
   def edit
     @job = Job.find(params)
   end
-
-
 end
