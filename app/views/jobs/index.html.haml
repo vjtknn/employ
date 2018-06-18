@@ -1,6 +1,6 @@
 - @jobs.each_with_index do |job, index|
   =index+1
-  =job.title
+  = link_to job.title, job_path(job)
 %br
 - if policy(JobForm).new?
   =link_to 'New job', new_job_path, class: 'btn btn-outline-primary'
