@@ -8,10 +8,6 @@ class JobFormPolicy < ApplicationPolicy
     admin?
   end
 
-  def edit?
-    true
-  end
-
   def update?
     admin?
   end

@@ -1,22 +1,16 @@
 class JobForm
   include ActiveModel::Model
 
-  attr_accessor :title
+  attr_accessor :title, :id
 
   validates :title, presence: true
 
-  def save
+  def create
     if valid?
-      persist!
+      Job.create!(title: title)
       true
     else
       false
     end
-  end
-
-  private
-
-  def persist!
-    @job = Job.create!(title: title)
   end
 end
