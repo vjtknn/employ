@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :jobs
   resources :employees
   resources :departments
+
+  mount API::Core, at: "/"
 end

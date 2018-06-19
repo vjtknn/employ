@@ -14,9 +14,16 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'pundit'
-gem 'grape'
 gem 'rubocop'
 gem 'omniauth-google-oauth2'
+
+# grape
+gem "grape"
+
+# pagination
+gem "grape-kaminari"
+gem "kaminari"
+gem "kaminari-grape"
 
 group :development, :test do
   gem 'pry'
