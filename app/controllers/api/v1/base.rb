@@ -4,7 +4,7 @@ module API
       format :json
       version 'v1', using: :path, vendor: 'emplo'
 
-      mount Jobs
+      mount Jobs::Base
     end
   end
 end

@@ -25,6 +25,11 @@ gem "grape-kaminari"
 gem "kaminari"
 gem "kaminari-grape"
 
+# pagination
+gem "grape-kaminari"
+gem "kaminari"
+gem "kaminari-grape"
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'

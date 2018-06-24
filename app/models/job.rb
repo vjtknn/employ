@@ -10,4 +10,6 @@
 
 class Job < ApplicationRecord
   has_many :employees
+
+  validates_presence_of :title
 end

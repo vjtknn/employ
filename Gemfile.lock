@@ -122,6 +122,9 @@ GEM
     grape-jsonapi-resources (0.0.7)
       grape
       jsonapi-resources (>= 0.5.0)
+    grape-kaminari (0.1.9)
+      grape
+      kaminari
     grape-middleware-logger (1.9.0)
       grape (>= 0.17, < 1.1)
     grape-swagger (0.29.0)
@@ -154,7 +157,25 @@ GEM
       activerecord (>= 4.1)
       concurrent-ruby
       railties (>= 4.1)
+<<<<<<< HEAD
 >>>>>>> Api for jobs
+=======
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
+    kaminari-grape (1.0.1)
+      grape
+      kaminari-core (~> 1.0)
+>>>>>>> Modify endpoints with spec
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -354,6 +375,7 @@ DEPENDENCIES
   faker
   grape
   grape-jsonapi-resources
+  grape-kaminari
   grape-middleware-logger
   grape-swagger
   grape-swagger-rails
@@ -361,6 +383,8 @@ DEPENDENCIES
   hashie-forbidden_attributes
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
+  kaminari-grape
   listen (>= 3.0.5, < 3.2)
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)
