@@ -9,6 +9,7 @@
 #  encrypted_password     :string           default(""), not null
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :inet
+#  name                   :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -33,7 +34,7 @@ class User < ApplicationRecord
 
          def self.from_omniauth(access_token)
              data = access_token.info
-             user = User.find_by(email: data['email']).first
+             user = User.where(email: data['email']).first
              unless user
                  user = User.create(name: data['name'],
                     email: data['email'],
