@@ -16,6 +16,7 @@ gem 'devise'
 gem 'pundit'
 gem 'grape'
 gem 'rubocop'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'pry'
