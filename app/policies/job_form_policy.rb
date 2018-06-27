@@ -1,5 +1,4 @@
 class JobFormPolicy < ApplicationPolicy
-
   def new?
     true
   end

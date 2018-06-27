@@ -14,7 +14,7 @@ class EmployeeForm
         last_name: last_name,
         birth_date: birth_date,
         job_id: job_id,
-        boss_id: boss_id,
+        boss_id: boss_id
       )
       true
     else

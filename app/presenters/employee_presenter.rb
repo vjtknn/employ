@@ -1,5 +1,4 @@
 class EmployeePresenter
-
   def initialize(employee)
     @employee = employee
   end

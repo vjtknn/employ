@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'pundit'
 gem 'grape'
+gem 'rubocop'
 
 group :development, :test do
   gem 'pry'
