@@ -7,7 +7,6 @@ module API
         params :create_job do
           requires :title, type: String, desc: 'Title for the new job'
         end
-
       end
     end
   end
