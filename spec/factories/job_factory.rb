@@ -10,6 +10,6 @@
 
 FactoryBot.define do
   factory :job do
-    title "Worker"
+    title Faker::Job.title
   end
 end
