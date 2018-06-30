@@ -6,6 +6,8 @@ module API
           mount Index
           mount Show
           mount Create
+          mount Update
+          mount Destroy
         end
       end
     end

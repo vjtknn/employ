@@ -4,7 +4,7 @@ module API
       class Create < Base
         helpers Params
 
-        params { use :create_job }
+        params { use :job }
 
         desc 'Create a job'
         post do

@@ -4,8 +4,8 @@ module API
       module Params
         extend Grape::API::Helpers
 
-        params :create_job do
-          requires :title, type: String, desc: 'Title for the new job'
+        params :job do
+          requires :title, type: String, desc: 'Title for job'
         end
       end
     end

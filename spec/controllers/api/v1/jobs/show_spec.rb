@@ -14,7 +14,7 @@ describe API::V1::Jobs::Show, type: :request do
   end
 
   context "when job does not exists" do
-    let(:id) { 10 }
+    let(:id) { 2 }
     it 'should have status not found' do
       subject
       expect(response).to have_http_status :not_found

@@ -41,4 +41,8 @@ class JobsController < ApplicationController
   #     render :edit
   #   end
   # end
+
+  def destroy
+    @job = Job.find(params[:id])
+  end
 end
