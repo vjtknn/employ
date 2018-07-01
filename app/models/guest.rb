@@ -1,5 +1,6 @@
 class Guest
-  def name
+  include Singleton
+  def self.name
     'Guest User'
   end
 end
