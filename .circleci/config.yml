@@ -55,6 +55,7 @@ jobs:
       # Rubocop
       - run: bundle exec rubocop
 
+      #TODO fix db cretion
       # Database setup
       # - run: bundle exec rake db:create
       # - run: bundle exec rake db:schema:load

@@ -11,10 +11,15 @@ describe API::V1::Jobs::Show, type: :request do
       subject
       expect(response).to have_http_status :ok
     end
+
+    it 'returns job' do
+      subject
+      expect((response.body)).to eq(job.to_json)
+    end
   end
 
   context "when job does not exists" do
-    let(:id) { 2 }
+    let(:id) { Job.maximum(:id).to_i.next }
     it 'should have status not found' do
       subject
       expect(response).to have_http_status :not_found

@@ -8,7 +8,14 @@ module API
 
         desc 'Create a job'
         post do
-          Job.create!(params)
+          @job = Job.new(params)
+          if @job.save
+            status :created
+            @job
+          else
+            status :forbidden
+            @job.errors
+          end
         end
       end
     end

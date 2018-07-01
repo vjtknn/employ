@@ -3,6 +3,10 @@ module API
     module Jobs
       class Base < Core
         namespace :jobs do
+          before do
+            @job = Job.find_by(id: params[:id])
+          end
+
           mount Index
           mount Show
           mount Create
