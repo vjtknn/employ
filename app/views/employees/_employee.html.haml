@@ -1,0 +1,5 @@
+.col-lg-4
+  .card.employee-card
+    .card-body
+      %img.card-img-top{src: 'http://via.placeholder.com/250x150/21D368'}
+      %h4.card-title= link_to EmployeePresenter.new(employee).full_name, employee_path(employee)
