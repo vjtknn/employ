@@ -57,7 +57,13 @@ RSpec.configure do |config|
 
   require 'support/factory_bot'
 
+  # Turn on "test mode" for OmniAuth
+ OmniAuth.config.test_mode = true
+
+ # Include Devise TestHelpers
+ config.include Devise::Test::ControllerHelpers, type: :controller
 end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
