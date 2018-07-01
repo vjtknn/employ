@@ -17,6 +17,10 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
 
       let(:user) { User.find_by(email: 'testuser@gmail.com') }
 
+      it 'should set :notice flash' do
+        expect(flash[:notice]).to eq('Successfully authenticated from Google account.')
+      end
+
       it 'should set current_user to proper user' do
         expect(subject.current_user).to eq(user)
       end
