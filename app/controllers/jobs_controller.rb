@@ -27,22 +27,18 @@ class JobsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @job = Job.find(params[:id])
-  #   authorize @job
-  # end
-  #
-  # def update
-  #   @job_form = JobForm.new(params[:job].permit(:id, :title))
-  #   authorize @job_form
-  #   if @job_form.update
-  #     redirect_to jobs_path
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  def destroy
+  def edit
     @job = Job.find(params[:id])
+    authorize @job
+  end
+
+  def update
+    @job_form = JobForm.new(params[:job].permit(:id, :title))
+    authorize @job_form
+    if @job_form.update
+      redirect_to jobs_path
+    else
+      render :edit
+    end
   end
 end
