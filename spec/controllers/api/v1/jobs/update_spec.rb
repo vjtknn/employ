@@ -7,8 +7,10 @@ describe API::V1::Jobs::Update, type: :request do
 
   subject { patch endpoint, params: params }
 
+  let(:params) { attributes_for(:job, title: title) }
+
   context 'with valid params' do
-    let(:params) { attributes_for(:job, title: 'RoR dev') }
+    let(:title) { 'Meticulous code reviewer' }
     it 'should return 200' do
       subject
       expect(response).to have_http_status :ok
@@ -21,7 +23,7 @@ describe API::V1::Jobs::Update, type: :request do
   end
 
   context 'with invalid params' do
-    let(:params) { attributes_for(:job, title: nil) }
+    let(:title) { nil }
     it 'should return 403' do
       subject
       expect(response).to have_http_status :forbidden
