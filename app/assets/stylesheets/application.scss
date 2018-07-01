@@ -1,1 +1,21 @@
 @import "bootstrap";
+
+$primary-color: #C9F;
+$borer-color: #99F;
+
+
+.employee-card {
+  margin-bottom: 20px;
+  border: solid 3px $borer-color;
+  border-radius: 10px;
+
+  a{
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover{
+      color: lighten($primary-color, 10%);
+    }
+
+  }
+}
