@@ -3,7 +3,7 @@ module API
     module Jobs
       class Destroy < Base
         desc 'Destroy a job'
-        delete '/:id' do
+        delete do
           if @job
             if @job.destroy
               status :ok

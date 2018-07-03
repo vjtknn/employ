@@ -4,7 +4,6 @@ module API
       class Index < Base
         desc 'return all of the jobs'
         paginate per_page: 10, offset: false
-
         get do
           paginate(Job.all)
         end

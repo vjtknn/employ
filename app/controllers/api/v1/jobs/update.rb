@@ -7,7 +7,7 @@ module API
         params { use :job }
 
         desc 'Update a job'
-        patch '/:id' do
+        patch do
           if @job.update(params)
             status :ok
             @job

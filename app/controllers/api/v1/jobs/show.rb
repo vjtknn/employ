@@ -3,7 +3,7 @@ module API
     module Jobs
       class Show < Base
         desc 'Return a job'
-        get '/:id' do
+        get do
           if @job
             status :ok
             @job
