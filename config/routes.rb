@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :departments
 
   mount API::Core, at: "/"
+  mount GrapeSwaggerRails::Engine => '/swagger'
 end

@@ -19,6 +19,8 @@ gem 'omniauth-google-oauth2'
 
 # grape
 gem "grape"
+gem "grape-swagger"
+gem "grape-swagger-rails"
 
 # pagination
 gem "grape-kaminari"

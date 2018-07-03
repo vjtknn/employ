@@ -122,6 +122,10 @@ GEM
     grape-kaminari (0.1.9)
       grape
       kaminari
+    grape-swagger (0.29.0)
+      grape (>= 0.16.2)
+    grape-swagger-rails (0.3.0)
+      railties (>= 3.2.12)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -372,6 +376,8 @@ DEPENDENCIES
   faker
   grape
   grape-kaminari
+  grape-swagger
+  grape-swagger-rails
   haml
   jbuilder (~> 2.5)
   jquery-rails
