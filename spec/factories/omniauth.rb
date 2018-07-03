@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :auth_hash, class: OmniAuth::AuthHash do
-
     initialize_with do
       OmniAuth::AuthHash.new({
         provider: provider,
@@ -15,6 +14,10 @@ FactoryBot.define do
       provider "google"
       sequence(:uid)
       email "testuser@gmail.com"
+    end
+
+    trait :does_not_persist do
+      email ""
     end
   end
 end
