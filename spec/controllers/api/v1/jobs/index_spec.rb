@@ -7,12 +7,12 @@ describe API::V1::Jobs::Index, type: :request do
   context 'with first page' do
     let(:endpoint) { '/api/v1/jobs' }
 
-    it 'should have 200 status code' do
+    it 'has 200 status code' do
       subject
       expect(response).to have_http_status :ok
     end
 
-    it 'return 10 jobs' do
+    it 'returns 10 jobs' do
       subject
       expect(JSON.parse(response.body).size).to eq(10)
     end
@@ -21,11 +21,11 @@ describe API::V1::Jobs::Index, type: :request do
   context 'with second page' do
     let(:endpoint) { '/api/v1/jobs?page=2' }
 
-    it 'should have 200 status code' do
+    it 'has 200 status code' do
       subject
       expect(response).to have_http_status :ok
     end
-    it 'return 5 jobs' do
+    it 'returns 5 jobs' do
       subject
       expect(JSON.parse(response.body).size).to eq(5)
     end

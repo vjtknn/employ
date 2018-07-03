@@ -11,25 +11,25 @@ describe API::V1::Jobs::Update, type: :request do
 
   context 'with valid params' do
     let(:title) { 'Meticulous code reviewer' }
-    it 'should return 200' do
+    it 'returns 200' do
       subject
       expect(response).to have_http_status :ok
     end
 
-    it 'should have new title' do
+    it 'changes a title' do
       subject
-      expect(job.reload.title).to eq(params[:title])
+      expect(job.reload.title).to eq(title)
     end
   end
 
   context 'with invalid params' do
     let(:title) { nil }
-    it 'should return 403' do
+    it 'returns 403' do
       subject
       expect(response).to have_http_status :forbidden
     end
 
-    it 'should not change title' do
+    it 'does not change title' do
       subject
       expect(job.reload.title).to eq(job.title)
     end

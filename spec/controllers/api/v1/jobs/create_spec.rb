@@ -13,7 +13,7 @@ describe API::V1::Jobs::Create, type: :request do
       expect(response).to have_http_status :created
     end
 
-    it 'should be one more job' do
+    it 'creates a new job' do
       expect{ subject }.to change(Job, :count).by(1)
     end
 
@@ -31,7 +31,7 @@ describe API::V1::Jobs::Create, type: :request do
       expect(response).to have_http_status :forbidden
     end
 
-    it 'should not change jobs number' do
+    it 'does not change number of jobs' do
       expect{ subject }.not_to change(Job, :count)
     end
 
