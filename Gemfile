@@ -50,6 +50,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'capybara'
 end
