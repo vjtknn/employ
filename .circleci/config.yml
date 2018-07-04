@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-<<<<<<< HEAD
       - image: circleci/ruby:2.4.1-node-browsers
         environment:
           RAILS_ENV: test
@@ -18,12 +17,6 @@ jobs:
           POSTGRES_USER: employ
           POSTGRES_DB: emplo_test
           POSTGRES_PASSWORD: ""
-=======
-       - image: circleci/ruby:2.4.1-node-browsers
-         environment:
-          RAILS_ENV: test
-          PGHOST: 127.0.0.1
->>>>>>> Job API update and delete
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -55,23 +48,22 @@ jobs:
       # Rubocop
       - run: bundle exec rubocop
 
-      #TODO fix db cretion
       # Database setup
-      # - run: bundle exec rake db:create
-      # - run: bundle exec rake db:schema:load
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
       # run tests!
-      # - run:
-      #     name: run tests
-      #     command: |
-      #       mkdir /tmp/test-results
-      #       TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-      #
-      #       bundle exec rspec --format progress \
-      #                       --format RspecJunitFormatter \
-      #                       --out /tmp/test-results/rspec.xml \
-      #                       --format progress \
-      #                       $TEST_FILES
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+
+            bundle exec rspec --format progress \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
 
       # collect reports
       - store_test_results:
