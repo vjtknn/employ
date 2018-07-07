@@ -14,13 +14,13 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'pundit'
-gem 'rubocop'
 gem 'omniauth-google-oauth2'
 
 # grape
 gem "grape"
 gem "grape-swagger"
 gem "grape-swagger-rails"
+gem "rack-cors"
 
 # pagination
 gem "grape-kaminari"
