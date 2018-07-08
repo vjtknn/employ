@@ -10,7 +10,7 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
       request.env['omniauth.auth'] = google_oauth_hash
       get :google_oauth2
     end
-    
+
     context 'Success handling' do
       let(:google_oauth_hash) { OmniAuth::AuthHash.new(Faker::Omniauth.google) }
 

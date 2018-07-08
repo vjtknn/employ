@@ -56,6 +56,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   require 'support/factory_bot'
+  require 'capybara/rails'
 
   # Turn on "test mode" for OmniAuth
  OmniAuth.config.test_mode = true
