@@ -14,9 +14,18 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'pundit'
-gem 'grape'
-gem 'rubocop'
 gem 'omniauth-google-oauth2'
+
+# grape
+gem "grape"
+gem "grape-swagger"
+gem "grape-swagger-rails"
+gem "rack-cors"
+
+# pagination
+gem "grape-kaminari"
+gem "kaminari"
+gem "kaminari-grape"
 
 group :development, :test do
   gem 'pry'
@@ -41,6 +50,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'capybara'
 end

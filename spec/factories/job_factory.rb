@@ -10,6 +10,10 @@
 
 FactoryBot.define do
   factory :job do
-    title "Worker"
+    title Faker::Job.title
+
+    trait :without_title do
+      title nil
+    end
   end
 end
