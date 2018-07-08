@@ -36,9 +36,11 @@ let(:user) { create(:user) }
   end
 
   context 'using google oauth2' do
-
+    before(:each) do
+      OmniAuth.config.mock_auth[:google_oauth2] = google_oauth_hash
+    end
     context 'with correct credentials' do
-      OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(Faker::Omniauth.google)
+      let(:google_oauth_hash) { OmniAuth::AuthHash.new(Faker::Omniauth.google) }
       it 'logs in successfully' do
       visit root_path
       expect(page).to have_link 'Log in with Google'
@@ -52,10 +54,8 @@ let(:user) { create(:user) }
     end
 
     context 'without correct credentials' do
-      before do
-      OmniAuth.config.mock_auth[:google_oauth2] = create(:auth_hash, :google, :does_not_persist)
-      end
-      it 'logs in successfully' do
+      let(:google_oauth_hash) { create(:auth_hash, :google, :does_not_persist) }
+      it 'does not log in' do
       visit root_path
       expect(page).to have_link 'Log in with Google'
       OmniAuth.config.mock_auth[:google_oauth2]
