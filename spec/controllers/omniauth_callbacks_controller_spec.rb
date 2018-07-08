@@ -6,39 +6,36 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
   end
 
   describe 'Google' do
+    before(:each) do
+      request.env['omniauth.auth'] = google_oauth_hash
+      get :google_oauth2
+    end
+    
     context 'Success handling' do
-      let!(:google_oauth_hash) { OmniAuth::AuthHash.new(Faker::Omniauth.google) }
-      before(:each) do
-        request.env['omniauth.auth'] = google_oauth_hash
-        get :google_oauth2
-      end
+      let(:google_oauth_hash) { OmniAuth::AuthHash.new(Faker::Omniauth.google) }
 
       let(:user) { User.find_by(email: google_oauth_hash[:info][:email]) }
 
-      it 'should set :notice flash' do
+      it 'sets :notice flash' do
         expect(flash[:notice]).to eq('Successfully authenticated from Google account.')
       end
 
-      it 'should set current_user to proper user' do
+      it 'sets current_user to proper user' do
         expect(subject.current_user).to eq(user)
       end
     end
+
     context 'Non-persisting User' do
+      let(:google_oauth_hash) { create(:auth_hash, :google, :does_not_persist) }
 
-      before(:each) do
-        request.env['omniauth.auth'] = FactoryBot.create(
-            :auth_hash, :google, :does_not_persist
-        )
-        get :google_oauth2
-      end
-
-      it 'should redirect to new user registration' do
+      it 'redirects to new user registration' do
         expect(response).to redirect_to new_user_registration_url
       end
 
-      it 'should set flash :alert' do
+      it 'sets flash :alert' do
         expect(flash[:alert]).to eq("Email can't be blank")
       end
     end
+
   end
 end
