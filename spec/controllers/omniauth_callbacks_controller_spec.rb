@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Users::OmniauthCallbacksController, type: :controller do
-  before(:each) do
+  before do
     request.env['devise.mapping'] = Devise.mappings[:user]
   end
 
   describe 'Google' do
-    before(:each) do
+    before do
       request.env['omniauth.auth'] = google_oauth_hash
       get :google_oauth2
     end
